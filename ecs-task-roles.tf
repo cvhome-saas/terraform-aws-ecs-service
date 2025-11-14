@@ -72,12 +72,14 @@ resource "aws_iam_role_policy" "ecs_task_role_policy" {
         Sid : "sid0"
         Effect : "Allow"
         Action : [
-          "cloudwatch:PutMetricData",
+          "cloudwatch:*",
           "servicediscovery:*",
           "s3:*",
           "ssm:*",
           "rds-db:connect",
-          "secretsmanager:*"
+          "secretsmanager:*",
+          "logs:*",
+          "xray:*"
         ]
         Resource : [
           "*"
